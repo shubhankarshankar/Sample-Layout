@@ -31,18 +31,20 @@ const FooterItem = props => {
               {props.linkFive}
             </a>
           </li>
-          <li>{props.descp}</li>
-          <br />
-          {props.address && (
-            <li>
-              <i className="fas fa-map-marker-alt icn"></i> {props.address}
-            </li>
-          )}
-          {props.phone && (
-            <li>
-              <i className="fas fa-mobile icn"></i> {props.phone}
-            </li>
-          )}
+          <div className="o-60">
+            <li>{props.descp}</li>
+            <br />
+            {props.address && (
+              <li>
+                <i className="fas fa-map-marker-alt icn"></i> {props.address}
+              </li>
+            )}
+            {props.phone && (
+              <li>
+                <i className="fas fa-mobile icn"></i> {props.phone}
+              </li>
+            )}
+          </div>
         </ul>
       </div>
     </div>

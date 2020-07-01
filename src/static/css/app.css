@@ -331,6 +331,10 @@ input[type="text"] {
   text-transform: capitalize;
 }
 
+.o-60 {
+  opacity: 60%;
+}
+
 .footer-social-panel {
   padding: 0 0 8% 0;
 }
