@@ -32,12 +32,7 @@ const App = () => {
           </div>
           <div className="w-20">
             <SearchQuery queryTitle={where} optionsType="Select Location">
-              <DropDownMenu
-                optionsList="where"
-                onOptionClick={() => {
-                  onOptionClick();
-                }}
-              />
+              <DropDownMenu optionsList="where" />
             </SearchQuery>
           </div>
           <div className="w-20">
