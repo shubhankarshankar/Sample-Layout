@@ -17,11 +17,6 @@ const App = () => {
   const [what, setWhat] = useState("Select Category");
   const [where, setWhere] = useState("Select Location");
 
-  const onOptionClick = (what, where) => {
-    setWhat(this.what);
-    setWhere(this.where);
-  };
-
   return (
     <div className="site-wrapper">
       <div className="main-wrapper">
