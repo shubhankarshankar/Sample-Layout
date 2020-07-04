@@ -54,11 +54,7 @@ class EventsCard extends React.Component {
 
   render() {
     return (
-      <div
-        className="event-card"
-        data-aos="fade-up"
-        id={`event-card-${this.props.id}`}
-      >
+      <div className="event-card enter-up" id={`event-card-${this.props.id}`}>
         <i className="fas fa-heart like-icn" id={`like-${this.props.id}`}></i>
 
         {/* eslint-disable-next-line */}

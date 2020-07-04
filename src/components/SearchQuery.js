@@ -12,11 +12,13 @@ const SearchQuery = props => {
 
   const handleOnClick = (queryTitle, item) => {
     queryTitle === "what" ? setWhat(item.option) : setWhere(item.option);
+    setVisible(false);
   };
 
+  //mapping for each option in the option list
   const renderContent = (queryTitle, optionsList) => {
     return (
-      <div className="dropdown-content">
+      <div className="dropdown-content enter-up-d">
         {optionsList.map(item => (
           <div
             className="list-item"
@@ -30,6 +32,7 @@ const SearchQuery = props => {
     );
   };
 
+  //Rendering the date query
   if (props.queryTitle === "WHEN") {
     return (
       <div className="query-block">
@@ -44,6 +47,7 @@ const SearchQuery = props => {
       </div>
     );
   } else if (props.queryTitle === "KEYWORD") {
+    // Rendering the keyword query
     return (
       <div className="query-block">
         <div className="query-name"> {props.queryTitle} </div>
@@ -52,6 +56,7 @@ const SearchQuery = props => {
     );
   }
 
+  //else, rendering the dropdowns
   return (
     <div>
       <div className="query-block">

@@ -7,10 +7,6 @@ import Footer from "./Footer";
 import FooterItem from "./FooterItem";
 import SocialPanel from "./SocialPanel";
 
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// AOS.init();
-
 const whatOptions = [
   {
     id: 1,
