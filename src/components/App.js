@@ -7,15 +7,14 @@ import EventsCard from "./EventCard";
 import Footer from "./Footer";
 import FooterItem from "./FooterItem";
 import SocialPanel from "./SocialPanel";
-import AOS from "aos";
 
-import "aos/dist/aos.css";
-
-AOS.init();
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// AOS.init();
 
 const App = () => {
-  const [what, setWhat] = useState("Select Category");
-  const [where, setWhere] = useState("Select Location");
+  const [what] = useState("Select Category");
+  const [where] = useState("Select Location");
 
   return (
     <div className="site-wrapper">
@@ -48,6 +47,7 @@ const App = () => {
         {/* Available Events */}
         <EventsGrid>
           <EventsCard
+            id="1"
             name="vibra"
             title="Vibra Manhou Fest"
             priceRange="$39 - $1,200"
@@ -56,6 +56,7 @@ const App = () => {
             dura="600"
           />
           <EventsCard
+            id="2"
             name="kenny"
             title="Kenny G"
             priceRange="$120"
@@ -64,6 +65,7 @@ const App = () => {
             dura="900"
           />
           <EventsCard
+            id="3"
             name="sesame"
             title="Sesame Street Live! Make Your Magic"
             priceRange="$45"
@@ -72,6 +74,7 @@ const App = () => {
             dura="1200"
           />
           <EventsCard
+            id="4"
             name="nutcracker"
             title="St. Petersburg Ballet - The Nutcracker"
             priceRange="$69 - $79"
@@ -80,6 +83,7 @@ const App = () => {
             dura="600"
           />
           <EventsCard
+            id="5"
             name="vlah"
             title="The Phantom of the Opera"
             priceRange="$36 - $69"
@@ -88,6 +92,7 @@ const App = () => {
             dura="900"
           />
           <EventsCard
+            id="6"
             name="cirque"
             title="Cirque du Soleil Kurios"
             priceRange="$49"
