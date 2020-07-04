@@ -7,6 +7,28 @@ import "react-datepicker/dist/react-datepicker.css";
 const SearchQuery = props => {
   const { visible, setVisible, ref } = useOutsideAlerter(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [what, setWhat] = useState("Select Category");
+  const [where, setWhere] = useState("Select Location");
+
+  const handleOnClick = (queryTitle, item) => {
+    queryTitle === "what" ? setWhat(item.option) : setWhere(item.option);
+  };
+
+  const renderContent = (queryTitle, optionsList) => {
+    return (
+      <div className="dropdown-content">
+        {optionsList.map(item => (
+          <div
+            className="list-item"
+            key={item.id}
+            onClick={() => handleOnClick(queryTitle, item)}
+          >
+            <span>{item.option}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   if (props.queryTitle === "WHEN") {
     return (
@@ -31,15 +53,19 @@ const SearchQuery = props => {
   }
 
   return (
-    <>
+    <div>
       <div className="query-block">
-        <div className="query-name">{props.queryTitle}</div>
+        <div className="query-name">
+          {props.queryTitle === "what" ? "WHAT" : "WHERE"}
+        </div>
         <div className="option" onClick={() => setVisible(!visible)}>
-          {props.optionsType}
+          {props.queryTitle === "what" ? what : where}
         </div>
       </div>
-      <div ref={ref}>{visible && props.children}</div>
-    </>
+      <div ref={ref}>
+        {visible && renderContent(props.queryTitle, props.optionsList)}
+      </div>
+    </div>
   );
 };
 

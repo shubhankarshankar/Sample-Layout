@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "./SearchBar";
 import SearchQuery from "./SearchQuery";
-import DropDownMenu from "./DropDownMenu";
 import EventsGrid from "./EventsGrid";
 import EventsCard from "./EventCard";
 import Footer from "./Footer";
@@ -12,10 +11,61 @@ import SocialPanel from "./SocialPanel";
 // import "aos/dist/aos.css";
 // AOS.init();
 
-const App = () => {
-  const [what] = useState("Select Category");
-  const [where] = useState("Select Location");
+const whatOptions = [
+  {
+    id: 1,
+    option: "Select Category",
+  },
+  {
+    id: 2,
+    option: "Arts & Theatre",
+  },
+  {
+    id: 3,
+    option: "Concerts",
+  },
+  {
+    id: 4,
+    option: "Conference",
+  },
+  {
+    id: 5,
+    option: "Family",
+  },
+  {
+    id: 6,
+    option: "Festivals",
+  },
+];
 
+const whereOptions = [
+  {
+    id: 1,
+    option: "Select Location",
+  },
+  {
+    id: 2,
+    option: "Brooklyn",
+  },
+  {
+    id: 3,
+    option: "Chicago",
+  },
+  {
+    id: 4,
+    option: "Napa",
+  },
+  {
+    id: 5,
+    option: "New York",
+  },
+  {
+    id: 6,
+    option: "San Jose",
+  },
+];
+
+const App = () => {
   return (
     <div className="site-wrapper">
       <div className="main-wrapper">
@@ -25,14 +75,18 @@ const App = () => {
         {/* Search Bar for specific Event */}
         <SearchBar>
           <div className="w-20">
-            <SearchQuery queryTitle={what} optionsType="Select Category">
-              <DropDownMenu optionsList="what" />
-            </SearchQuery>
+            <SearchQuery
+              queryTitle="what"
+              optionsType="Select Category"
+              optionsList={whatOptions}
+            />
           </div>
           <div className="w-20">
-            <SearchQuery queryTitle={where} optionsType="Select Location">
-              <DropDownMenu optionsList="where" />
-            </SearchQuery>
+            <SearchQuery
+              queryTitle="where"
+              optionsType="Select Location"
+              optionsList={whereOptions}
+            />{" "}
           </div>
           <div className="w-20">
             <SearchQuery queryTitle="WHEN" optionsType="Select Date" />

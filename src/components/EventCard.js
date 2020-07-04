@@ -92,7 +92,7 @@ class EventsCard extends React.Component {
             </div>
           </div>
           <div className="book-ticket" id={`book-ticket-${this.props.id}`}>
-            Book Ticket <i class="fas fa-arrow-right"></i>
+            Book Ticket <i className="fas fa-arrow-right"></i>
           </div>
         </div>
       </div>
